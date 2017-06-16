@@ -45,7 +45,7 @@ module.exports = class extends Generator {
   writing() {
     this.fs.copy(
       this.templatePath('dummyfile.txt'),
-      this.destinationPath(path.join(this.props.name, this.props.module + '.txt')
+      this.destinationPath(path.join(this.props.name, this.props.module + '.txt'))
     );
   }
 
