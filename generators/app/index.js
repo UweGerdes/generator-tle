@@ -7,7 +7,7 @@ const path = require('path');
 var config = {
   dir: {
     docs: 'docs',
-    views: 'DesktopBundle/Resources/views',
+    views: 'DesignBundle/Resources/views',
     stylesheets: 'AssetsBundle/Resources/stylesheets',
     variables: 'AssetsBundle/Resources/variables',
     javascript: 'AssetsBundle/Resources/javascript'
@@ -56,6 +56,13 @@ module.exports = class extends Generator {
     this.fs.copyTpl(
       this.templatePath('doc.md'),
       this.destinationPath(path.join(config.dir.docs, this.props.module + '.md')),
+      {
+        props: this.props
+      }
+    );
+    this.fs.copyTpl(
+      this.templatePath('view.html.twig'),
+      this.destinationPath(path.join(config.dir.views, this.props.module + '.html.twig')),
       {
         props: this.props
       }
