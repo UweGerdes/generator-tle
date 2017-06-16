@@ -13,7 +13,6 @@ describe('generator-ez-54:app', () => {
 
   it('creates files', () => {
     assert.file([
-      'docs/test-module.txt',
       'docs/test-module.md'
     ]);
   });
