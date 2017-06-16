@@ -4,6 +4,15 @@ const chalk = require('chalk');
 const yosay = require('yosay');
 const path = require('path');
 
+var config = {
+  dir: {
+    docs: 'docs',
+    views: 'DesktopBundle/Resources/views',
+    stylesheets: 'AssetsBundle/Resources/stylesheets',
+    javascript: 'AssetsBundle/Resources/javascript'
+  }
+};
+
 module.exports = class extends Generator {
   constructor(args, opts) {
     super(args, opts);
@@ -21,14 +30,14 @@ module.exports = class extends Generator {
   prompting() {
     const prompts = [{
       type: 'input',
-      name: 'name',
-      message: 'Your project name',
-      default: this.appname // Default to current folder name
-    }, {
-      type: 'input',
       name: 'module',
       message: 'New module name',
       default: this.options.modulename // Default to first argument
+    }, {
+      type: 'input',
+      name: 'description',
+      message: 'Short description',
+      default: 'Awful new ' + this.options.modulename
     }, {
       type: 'confirm',
       name: 'someAnswer',
@@ -46,6 +55,16 @@ module.exports = class extends Generator {
     this.fs.copy(
       this.templatePath('dummyfile.txt'),
       this.destinationPath(path.join('docs', this.props.module + '.txt'))
+    );
+
+    this.fs.copyTpl(
+      this.templatePath('doc.md'),
+      this.destinationPath(path.join(config.dir.docs, this.props.module + '.md')),
+      {
+        modulename: this.props.module,
+        description: this.props.description,
+        props: this.props
+      }
     );
   }
 
