@@ -13,7 +13,9 @@ describe('generator-ez-54:app', () => {
 
   it('creates files', () => {
     assert.file([
-      'docs/test-module.md'
+      'docs/test-module.md',
+      'AssetsBundle/Resources/stylesheets/test-module.scss',
+      'AssetsBundle/Resources/variables/test-module.scss'
     ]);
   });
 });

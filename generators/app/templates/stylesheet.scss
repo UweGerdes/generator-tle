@@ -1,0 +1,11 @@
+// Stylesheet for <%= props.module %>
+
+.<%= props.module %> {
+
+  &-headline {
+    font-size: $<%= props.module %>-headline_font-size;
+  }
+
+  // TODO: add styles
+
+}

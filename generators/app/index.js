@@ -9,6 +9,7 @@ var config = {
     docs: 'docs',
     views: 'DesktopBundle/Resources/views',
     stylesheets: 'AssetsBundle/Resources/stylesheets',
+    variables: 'AssetsBundle/Resources/variables',
     javascript: 'AssetsBundle/Resources/javascript'
   }
 };
@@ -56,8 +57,20 @@ module.exports = class extends Generator {
       this.templatePath('doc.md'),
       this.destinationPath(path.join(config.dir.docs, this.props.module + '.md')),
       {
-        modulename: this.props.module,
-        description: this.props.description,
+        props: this.props
+      }
+    );
+    this.fs.copyTpl(
+      this.templatePath('stylesheet.scss'),
+      this.destinationPath(path.join(config.dir.stylesheets, this.props.module + '.scss')),
+      {
+        props: this.props
+      }
+    );
+    this.fs.copyTpl(
+      this.templatePath('variables.scss'),
+      this.destinationPath(path.join(config.dir.variables, this.props.module + '.scss')),
+      {
         props: this.props
       }
     );
