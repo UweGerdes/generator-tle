@@ -14,7 +14,7 @@
   "main": "generators/app/index.js",
   "keywords": [
     "twig",
-    "scss",
+    "less",
     "es6",
     "yeoman-generator"
   ],

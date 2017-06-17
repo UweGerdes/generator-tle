@@ -5,6 +5,8 @@
 
  */
 
-export default function(jQuery) {
-  return '<%= props.module %>';
-}
+'use strict';
+
+((window, console) => {
+	console.log('script <%= props.module %> loaded.');
+})(window, window.console);
