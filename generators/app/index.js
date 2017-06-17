@@ -81,6 +81,13 @@ module.exports = class extends Generator {
         props: this.props
       }
     );
+    this.fs.copyTpl(
+      this.templatePath('es6.js'),
+      this.destinationPath(path.join(config.dir.javascript, this.props.module + '.js')),
+      {
+        props: this.props
+      }
+    );
   }
 
   install() {

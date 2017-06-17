@@ -16,7 +16,8 @@ describe('generator-ez-54:app', () => {
       'docs/test-module.md',
       'AssetsBundle/Resources/stylesheets/test-module.scss',
       'AssetsBundle/Resources/variables/test-module.scss',
-      'DesignBundle/Resources/views/test-module.html.twig'
+      'DesignBundle/Resources/views/test-module.html.twig',
+      'AssetsBundle/Resources/javascript/test-module.js'
     ]);
   });
 });
