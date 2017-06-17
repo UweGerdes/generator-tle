@@ -6,11 +6,11 @@ const path = require('path');
 
 var config = {
   dir: {
-    docs: 'docs',
+    docs: 'DesignBundle/docs',
     views: 'DesignBundle/Resources/views',
-    stylesheets: 'AssetsBundle/Resources/stylesheets',
-    variables: 'AssetsBundle/Resources/variables',
-    javascript: 'AssetsBundle/Resources/javascript'
+    stylesheets: 'DesignBundle/Resources/stylesheets',
+    variables: 'DesignBundle/Resources/variables',
+    javascript: 'DesignBundle/Resources/javascript'
   }
 };
 
@@ -24,7 +24,7 @@ module.exports = class extends Generator {
   initializing() {
     // Have Yeoman greet the user.
     this.log(yosay(
-      'Welcome to the ' + chalk.yellow('generator-tlj') + ' generator!'
+      'Welcome to the ' + chalk.yellow('generator-tle') + ' generator!'
     ));
   }
 
@@ -81,7 +81,7 @@ module.exports = class extends Generator {
         props: this.props
       }
     );
-    if (generateJavaScript) {
+    if (this.props.generateJavaScript) {
       this.fs.copyTpl(
         this.templatePath('es6.js'),
         this.destinationPath(path.join(config.dir.javascript, this.props.module + '.js')),
@@ -93,13 +93,13 @@ module.exports = class extends Generator {
   }
 
   install() {
-    // this.installDependencies();
-    // this.log(chalk.red('installing generator-tlj generator!'));
+    // This.installDependencies();
+    // this.log(chalk.red('installing generator-tle generator!'));
   }
 
   end() {
     this.log(yosay(
-      'finished generating ' + chalk.green('generator-tlj') + '.'
+      'finished generating ' + chalk.green('generator-tle') + '.'
     ));
   }
 };

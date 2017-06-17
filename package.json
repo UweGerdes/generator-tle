@@ -1,7 +1,7 @@
 {
-  "name": "generator-tlj",
+  "name": "generator-tle",
   "version": "0.1.0",
-  "description": "generating frontend files for Twig, Less, JavaScript",
+  "description": "generating frontend files for Twig, Less, ES6",
   "homepage": "http://generators.uwegerdes.de/",
   "author": {
     "name": "Uwe Gerdes",
@@ -43,6 +43,6 @@
       "node": true
     }
   },
-  "repository": "/generator-tlj",
+  "repository": "/generator-tle",
   "license": "MIT"
 }
