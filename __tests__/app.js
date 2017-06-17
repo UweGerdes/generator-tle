@@ -7,8 +7,7 @@ describe('generator-tle:app', () => {
   beforeAll(() => {
     return helpers.run(path.join(__dirname, '../generators/app'))
       .withPrompts({module: 'test-module'})
-      .withPrompts({description: 'Short description for test-module'})
-      .withPrompts({generateJavaScript: true});
+      .withPrompts({description: 'Short description for test-module'});
   });
 
   it('creates files', () => {
