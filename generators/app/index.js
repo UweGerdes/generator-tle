@@ -24,7 +24,7 @@ module.exports = class extends Generator {
   initializing() {
     // Have Yeoman greet the user.
     this.log(yosay(
-      'Welcome to the ' + chalk.yellow('generator-ez54') + ' generator!'
+      'Welcome to the ' + chalk.yellow('generator-tlj') + ' generator!'
     ));
   }
 
@@ -41,8 +41,8 @@ module.exports = class extends Generator {
       default: 'Awful new ' + this.options.modulename
     }, {
       type: 'confirm',
-      name: 'someAnswer',
-      message: 'Would you like to enable this option?',
+      name: 'generateJavaScript',
+      message: 'Would you like to generate the .js file?',
       default: true
     }];
 
@@ -68,36 +68,38 @@ module.exports = class extends Generator {
       }
     );
     this.fs.copyTpl(
-      this.templatePath('stylesheet.scss'),
-      this.destinationPath(path.join(config.dir.stylesheets, this.props.module + '.scss')),
+      this.templatePath('stylesheet.less'),
+      this.destinationPath(path.join(config.dir.stylesheets, this.props.module + '.less')),
       {
         props: this.props
       }
     );
     this.fs.copyTpl(
-      this.templatePath('variables.scss'),
-      this.destinationPath(path.join(config.dir.variables, this.props.module + '.scss')),
+      this.templatePath('variables.less'),
+      this.destinationPath(path.join(config.dir.variables, this.props.module + '.less')),
       {
         props: this.props
       }
     );
-    this.fs.copyTpl(
-      this.templatePath('es6.js'),
-      this.destinationPath(path.join(config.dir.javascript, this.props.module + '.js')),
-      {
-        props: this.props
-      }
-    );
+    if (generateJavaScript) {
+      this.fs.copyTpl(
+        this.templatePath('es6.js'),
+        this.destinationPath(path.join(config.dir.javascript, this.props.module + '.js')),
+        {
+          props: this.props
+        }
+      );
+    }
   }
 
   install() {
-    //    This.installDependencies();
-    this.log(chalk.red('not installing generator-ez54 generator!'));
+    // this.installDependencies();
+    // this.log(chalk.red('installing generator-tlj generator!'));
   }
 
   end() {
     this.log(yosay(
-      'finished generating ' + chalk.green('generator-ez54') + '.'
+      'finished generating ' + chalk.green('generator-tlj') + '.'
     ));
   }
 };

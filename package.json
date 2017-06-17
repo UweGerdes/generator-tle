@@ -1,7 +1,7 @@
 {
-  "name": "generator-ez54",
-  "version": "0.0.7",
-  "description": "generating frontend files for eZ 5.4",
+  "name": "generator-tlj",
+  "version": "0.1.0",
+  "description": "generating frontend files for Twig, Less, JavaScript",
   "homepage": "http://generators.uwegerdes.de/",
   "author": {
     "name": "Uwe Gerdes",
@@ -43,6 +43,6 @@
       "node": true
     }
   },
-  "repository": "/generator-ez54",
+  "repository": "/generator-tlj",
   "license": "MIT"
 }

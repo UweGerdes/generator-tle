@@ -1,5 +1,6 @@
-# generator-ez54
+# generator-tlj
 
+0.1.0 rename to tlj: Twig Less JavaScript
 0.0.8 generating AssetBundle javascript file
 0.0.7 generating DesignBundle view file
 0.0.6 generating AssetBundle stylesheet files
