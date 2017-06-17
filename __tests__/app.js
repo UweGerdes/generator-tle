@@ -21,3 +21,24 @@ describe('generator-tle:app', () => {
     ]);
   });
 });
+
+describe('generator-tle:app', () => {
+  beforeAll(() => {
+    return helpers.run(path.join(__dirname, '../generators/app'))
+      .withPrompts({module: 'test-nojs'})
+      .withPrompts({description: 'Short description for test-nojs'})
+      .withPrompts({generateJavaScript: false});
+  });
+
+  it('creates files without js file', () => {
+    assert.file([
+      'DesignBundle/docs/test-nojs.md',
+      'DesignBundle/Resources/stylesheets/test-nojs.less',
+      'DesignBundle/Resources/variables/test-nojs.less',
+      'DesignBundle/Resources/views/test-nojs.html.twig'
+    ]);
+    assert.noFile([
+      'DesignBundle/Resources/javascript/test-nojs.js'
+    ]);
+  });
+});
