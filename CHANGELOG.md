@@ -1,5 +1,6 @@
 # generator-tle
 
+0.1.1 updating package.json, added dependencies
 0.1.0 rename to tle: Twig, Less, ES6
 0.0.8 generating AssetBundle javascript file
 0.0.7 generating DesignBundle view file
