@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/UweGerdes/generator-tle.svg?branch=master)](https://travis-ci.org/UweGerdes/generator-tle)
+
 # Yeoman generator Twig Less ES6
 
 ## Installation
