@@ -4,12 +4,12 @@
 
 ## Installation
 
-Make shure you have Node.js installed.
+Make sure you have Node.js installed.
 
 Install Yeoman and some tools globally (perhaps you need `sudo`):
 
 ```bash
-$ npm install -g yo eslint nsp jest-cli
+$ npm install -g yo nsp jest-cli
 ```
 
 Clone the git and install dependencies:
