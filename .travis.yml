@@ -3,5 +3,6 @@ node_js:
   - 7
   - 6
   - 4
-before_script:
+before_install:
+  - which npm
   - sudo npm install -g yo eslint nsp jest-cli
